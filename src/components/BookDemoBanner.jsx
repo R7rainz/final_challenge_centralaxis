@@ -1,34 +1,45 @@
-import backgroundImage from '../assets/background.png';
+import React from "react";
 
 const BookDemoBanner = () => {
-  return (
-    <section className="w-full px-4 py-8 flex justify-center items-center">
-      <div
-        className="w-full max-w-6xl relative rounded-xl overflow-hidden text-center px-6 py-12 flex flex-col items-center justify-center"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        {/* Semi-transparent gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/40 to-black/50 backdrop-blur-sm z-0" />
+    return (
+        <section className="container relative mx-auto flex flex-col items-center gap-10 px-6 pb-14">
+            <article
+                className="dark:bg-dark-surface-secondary relative flex flex-col items-center justify-center gap-9 self-stretch overflow-hidden rounded-xl border-border p-6"
+                style={{ height: "250px" }}
+            >
+                <img
+                    className="absolute left-0 top-0 h-full w-full object-cover"
+                    src="https://www.centralaxis.com/background.png"
+                    style={{ filter: "blur(2px)" }}
+                    alt="Demo Background"
+                />
+                {/* Overlay Layer */}
+                <div className="absolute left-0 top-0 h-full w-full bg-black opacity-60 z-10" />
+                <div className="absolute left-0 top-0 z-10 h-full w-full filter" />
 
-        {/* Content */}
-        <div className="relative z-10">
-          <h2 className="text-white text-2xl md:text-3xl font-semibold mb-2">
-            Book a Demo
-          </h2>
-          <p className="text-white/80 text-sm md:text-base mb-5">
-            See how CentralAxis can revolutionize your data center operations.
-          </p>
-          <button className="bg-white text-black font-semibold px-5 py-2 rounded-md hover:bg-gray-100 transition">
-            Schedule Now
-          </button>
-        </div>
-      </div>
-    </section>
-  );
+                {/* Content */}
+                <div className="relative z-20 flex flex-col items-center gap-2 text-center">
+                    <h4 className="text-3xl font-medium tracking-tighter text-white md:text-4xl">
+                        Book a Demo
+                    </h4>
+                    <p className="mb-4 text-lg text-white/70 md:text-xl">
+                        See how CentralAxis can revolutionize your data center operations.
+                    </p>
+                    <div className="flex items-center gap-2">
+                        <a
+                            target="_blank"
+                            href="https://calendly.com/margarita-centralaxis/30min"
+                            rel="noreferrer"
+                        >
+                            <span className="rounded bg-white px-4 py-2 text-base font-semibold text-black">
+                                Schedule Now
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    );
 };
 
 export default BookDemoBanner;
