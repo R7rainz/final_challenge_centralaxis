@@ -86,7 +86,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="container relative mx-auto flex flex-col items-center gap-6 px-6 py-14 md:py-[72px] bg-background-black text-white md:px-12">
+    <section className="container relative mx-auto flex flex-col items-center gap-6 px-6 py-14 md:py-[72px] bg-black">
       {/* Header */}
       <div className="flex flex-col items-center gap-3 self-center max-w-4xl mx-auto text-center">
         <h3 className="text-sm text-txt-gray bg-fill-card rounded-full px-3 py-1">
@@ -104,12 +104,12 @@ const FeaturesSection = () => {
       {features.map((feature, index) => (
         <article
           key={index}
-          className={`min-h-96 w-full max-w-[380px] sm:max-w-full md:w-full rounded-xl border border-white/10 bg-[#161616] p-6 md:p-2 flex flex-col md:flex-row ${
+          className={`bg-[#161616] dark:border-white/10 flex min-h-96 w-full max-w-[380px] flex-col rounded-lg border border-white/10 p-px sm:max-w-full md:w-full md:flex-row ${
             feature.reverse ? "md:flex-row-reverse" : ""
-          } items-center gap-8 md:gap-12`}
+          } xl:gap-16`}
         >
-          {/* Text */}
-          <div className="flex flex-col gap-8 p-5 pt-6 md:flex-1 md:p-10 text-left">
+          {/* Text Content */}
+          <div className="flex flex-col gap-8 p-6 md:flex-1 md:p-10 text-left">
             <h3 className="text-2xl md:text-3xl font-semibold text-white">
               {feature.title}
             </h3>
@@ -131,8 +131,8 @@ const FeaturesSection = () => {
           </div>
 
           {/* Video */}
-          <div className="p-2">
-            <div className="w-[544px] h-[364px] overflow-hidden rounded-lg shadow-lg border border-white/10">
+          <div className="p-2 md:flex-1">
+            <div className="w-full h-auto aspect-video overflow-hidden rounded-lg shadow-lg border border-white/10">
               <video
                 autoPlay
                 loop
