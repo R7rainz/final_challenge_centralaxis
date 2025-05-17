@@ -64,7 +64,7 @@ import {
                 key={idx}
                 className="flex items-start gap-4 p-5 rounded-xl"
                 style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))",
+                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14))",
                 }}
               >
                 <div className="h-10 w-10 flex items-center justify-center rounded-full bg-white/10">
