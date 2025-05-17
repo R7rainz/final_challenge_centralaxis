@@ -4,7 +4,7 @@ const BookDemoBanner = () => {
     return (
         <section className="container relative mx-auto flex flex-col items-center gap-10 px-6 pb-14">
             <article
-                className="dark:bg-dark-surface-secondary relative flex flex-col items-center justify-center gap-9 self-stretch overflow-hidden rounded-xl border-border p-6"
+                className="dark:bg-dark-surface-secondary relative flex flex-col items-center justify-center gap-9 self-stretch overflow-hidden rounded-xl border border-border p-6"
                 style={{ height: "250px" }}
             >
                 <img

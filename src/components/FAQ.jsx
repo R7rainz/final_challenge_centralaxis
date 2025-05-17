@@ -2,7 +2,7 @@ import React from "react";
 
 const FAQs = () => {
   return (
-    <section className="bg-[#0c0c0d] text-white py-20 px-4 md:px-20">
+    <section className="bg-black text-white py-20 px-4 md:px-20">
       <div className="max-w-6xl mx-auto text-center">
         <span className="text-sm font-medium bg-[#1c1c1e] text-gray-300 px-3 py-1 rounded-full">
           FAQs
@@ -12,7 +12,8 @@ const FAQs = () => {
           Find answers to common questions about our solutions.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 text-left">
+        {/* Responsive grid: 1 column on mobile, 3 columns on md+ */}
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12 mt-16 text-left">
           {/* FAQ 1 */}
           <div>
             <h3 className="font-medium text-lg">
