@@ -91,7 +91,7 @@ function FeaturesSection() {
           {features.map((item, index) => (
             <article
               key={index}
-              className={`bg-[#111111] flex min-h-96 w-full max-w-[380px] flex-col rounded-lg border border-zinc-800/50 p-px sm:max-w-full md:w-full ${index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"} xl:gap-16 mx-auto`}
+              className={`bg-[#17161b] flex min-h-96 w-full max-w-[380px] flex-col rounded-lg border border-zinc-800/50 p-px sm:max-w-full md:w-full ${index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"} xl:gap-16 mx-auto`}
             >
               {/* Video Section */}
               <figure className="p-2 md:h-auto md:w-[360px] lg:w-[480px] xl:w-[560px]">

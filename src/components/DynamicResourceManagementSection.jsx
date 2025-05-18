@@ -150,7 +150,7 @@ export default function ResourceManagement() {
 // Original feature card for desktop
 function FeatureCard({ icon, title, description }) {
   return (
-    <div className="bg-zinc-900/80 rounded-lg p-6 flex gap-4 border border-zinc-800">
+    <div className="bg-zinc-900 rounded-lg p-6 flex gap-4 border border-zinc-800">
       <div className="bg-zinc-800 rounded-full p-3 h-fit">{icon}</div>
       <div className="space-y-2">
         <h3 className="font-medium text-lg text-white">{title}</h3>
