@@ -20,7 +20,6 @@ const navItems = [
       "Custom Data Center Solutions",
     ],
   },
-
   {
     title: "Intelligence Solutions",
     submenu: [
@@ -31,7 +30,6 @@ const navItems = [
       "Automated Discovery",
     ],
   },
-
   {
     title: "Data Center Compliance",
     submenu: [
@@ -44,7 +42,6 @@ const navItems = [
       "European Commission Joint Research Centre (JRC)",
     ],
   },
-
   {
     title: "Sustainability Blog",
     submenu: [
@@ -72,14 +69,14 @@ const Header = () => {
   return (
     <header className='fixed top-0 w-full border-b border-border-dark bg-background-black/60 z-20 backdrop-blur-xl'>
       <div className='max-w-[120rem] mx-auto px-8 md:px-6 py-4 flex justify-between items-center'>
-    
-        {/* icon and name */}
-        <div className='flex items-center gap-2'>
-          <img src={icon} alt='Central Axis Log' className='w-9' />
+
+        {/* icon and name with anchor tag */}
+        <a href="/" className='flex items-center gap-2'>
+          <img src={icon} alt='Central Axis Logo' className='w-9' />
           <span className='font-bold text-md lg:text-2xl text-txt-text'>
             CentralAxis
           </span>
-        </div>
+        </a>
 
         {/* navigation links */}
         <nav className='hidden lg:flex gap-2 relative'>
@@ -88,19 +85,19 @@ const Header = () => {
               key={index}
               className='relative'
               onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}>
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
               <button className='p-2 text-sm hover:text-txt-gray'>
                 {item.title} ▼
               </button>
-
-              {/* dropdown menu */}
 
               {hoverIndex === index && (
                 <ul className='absolute right-0 p-1 bg-background-black border border-white rounded w-64 z-30'>
                   {item.submenu.map((subItem, subIndex) => (
                     <li
                       key={subIndex}
-                      className='px-4 py-2 text-txt-text hover:text-txt-gray cursor-pointer text-sm font-semibold'>
+                      className='px-4 py-2 text-txt-text hover:text-txt-gray cursor-pointer text-sm font-semibold'
+                    >
                       {subItem}
                     </li>
                   ))}
@@ -113,7 +110,8 @@ const Header = () => {
         {/* mobile menu button */}
         <button
           className='lg:hidden text-white p-2 border border-border-soft rounded'
-          onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
           <Menu size={25} />
         </button>
       </div>
@@ -125,7 +123,8 @@ const Header = () => {
             <div key={index}>
               <button
                 className='flex justify-start gap-2 w-full items-center text-md text-txt-text font-medium mb-2'
-                onClick={() => toggleMobileSubMenu(index)}>
+                onClick={() => toggleMobileSubMenu(index)}
+              >
                 {item.title}
                 <ChevronDown
                   className={`text-txt-gray-dark transition-transform duration-300 ${
@@ -143,11 +142,13 @@ const Header = () => {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 1 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className='overflow-hidden space-y-4 pl-2'>
+                    className='overflow-hidden space-y-4 pl-2'
+                  >
                     {item.submenu.map((subItem, subIndex) => (
                       <li
                         key={subIndex}
-                        className='text-md text-txt-gray-dark hover:text-txt-gray cursor-pointer pl-2'>
+                        className='text-md text-txt-gray-dark hover:text-txt-gray cursor-pointer pl-2'
+                      >
                         {subItem}
                       </li>
                     ))}
