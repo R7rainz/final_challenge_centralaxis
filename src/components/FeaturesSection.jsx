@@ -69,7 +69,7 @@ const features = [
 
 function FeaturesSection() {
   return (
-    <section className="bg-black min-h-screen w-full">
+    <section className="bg-[#08090a] min-h-screen w-full">
       <div className="container relative mx-auto flex flex-col items-center gap-10 px-6 py-14 md:py-[72px]">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 self-center">

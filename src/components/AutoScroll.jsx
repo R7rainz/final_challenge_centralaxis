@@ -26,7 +26,7 @@ const HardwareIntegrations = () => {
   const scrollingLogos = [...logos, ...logos, ...logos] // enough to overflow the screen
 
   return (
-    <section className="relative flex flex-col items-center gap-10 py-14 md:py-[72px] w-full overflow-hidden bg-black border-t border-zinc-800/30">
+    <section className="relative flex flex-col items-center gap-10 py-14 md:py-[72px] w-full overflow-hidden bg-[#08090a] border-t border-zinc-800/30">
       <h2 className="text-md font-medium text-gray-400 text-center">
         Seamless integrations with any data center hardware
       </h2>

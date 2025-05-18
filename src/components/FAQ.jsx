@@ -2,7 +2,7 @@ import React from "react";
 
 const FAQs = () => {
   return (
-    <section className="bg-black text-white py-20 px-4 md:px-20">
+    <section className="bg-[#08090a] text-white py-20 px-4 md:px-20">
       <div className="max-w-6xl mx-auto text-center">
         <span className="text-sm font-medium bg-[#1c1c1e] text-gray-300 px-3 py-1 rounded-full">
           FAQs
