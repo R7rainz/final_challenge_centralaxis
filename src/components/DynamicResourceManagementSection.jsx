@@ -59,7 +59,7 @@ export default function ResourceManagement() {
   }
 
   return (
-    <div className="bg-[#08090a] text-white p-6 md:p-12 font-inter">
+    <div className="bg-[#08090a] text-white p-6 md:p-12 font-inter min-h-[620px]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column */}
