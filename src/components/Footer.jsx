@@ -1,5 +1,3 @@
-"use client"
-
 export default function Footer() {
   return (
     <footer className="border-t border-[#2e2e2e] bg-[#08090a] py-8">

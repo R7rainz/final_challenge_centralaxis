@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-
 import nvidia from "../assets/nvidia.svg"
 import amd from "../assets/amd.svg"
 import cisco from "../assets/cisco.svg"

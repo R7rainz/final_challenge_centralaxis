@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import AutoScroll from "./components/AutoScroll";
@@ -7,10 +8,10 @@ import DynamicResourceManagementSection from "./components/DynamicResourceManage
 import BookDemoBanner from "./components/BookDemoBanner";
 import FAQs from "./components/FAQ";
 import Footer from "./components/Footer";
-function App(){
+
+function MainContent() {
     return (
         <>
-            <Header />
             <Hero />
             <AutoScroll />
             <FeaturesSection />
@@ -18,8 +19,21 @@ function App(){
             <DynamicResourceManagementSection />
             <BookDemoBanner />
             <FAQs />
+        </>
+    );
+}
+
+function App() {
+    return (
+        <>
+            <Header />
+            <Routes>
+                <Route path="/" element={<MainContent />} />
+                {/* Add more routes here as needed */}
+            </Routes>
             <Footer />
         </>
     );
 }
+
 export default App;

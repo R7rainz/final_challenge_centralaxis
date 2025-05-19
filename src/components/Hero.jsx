@@ -1,5 +1,3 @@
-"use client"
-
 export default function Hero() {
   const handleRequestDemo = () => {
     window.open("https://calendly.com/margarita-centralaxis/30min", "_blank", "noopener,noreferrer")
