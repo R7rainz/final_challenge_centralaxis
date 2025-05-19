@@ -6,7 +6,7 @@ const Header = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-40 flex w-full justify-center bg-black transition-all text-white px-8">
+    <header className="sticky top-0 z-40 flex w-full justify-center bg-black/80 backdrop-blur-md transition-all text-white px-8">
       <div className="container flex h-16 items-center justify-between py-4" style={{ maxWidth: "unset" }}>
         <div className="flex w-full items-center justify-between py-2">
           {/* Logo Section */}
@@ -107,11 +107,9 @@ const Header = () => {
           </button>
 
           {open && (
-            <div className="block lg:hidden">
-              <div className="fixed left-0 top-16 z-10 h-auto w-full bg-[#08090a]">
-                <div className="flex flex-col gap-8 px-6 py-8">
-                  <SidebarNav />
-                </div>
+            <div className="fixed left-0 top-16 z-10 h-auto w-full bg-[#08090a]/90 backdrop-blur-md">
+              <div className="flex flex-col gap-8 px-6 py-8">
+                <SidebarNav />
               </div>
             </div>
           )}
@@ -128,7 +126,7 @@ const renderDropdown = (title, items) => {
         {title}
         <span className="ml-1">▼</span>
       </button>
-      <div className="invisible absolute right-0 mt-2 w-64 rounded-md border border-white bg-black opacity-0 shadow-lg transition-all duration-200 ease-in-out group-hover:visible group-hover:opacity-100">
+      <div className="invisible absolute right-0 mt-2 w-64 rounded-md border border-white bg-black/90 backdrop-blur-md opacity-0 shadow-lg transition-all duration-200 ease-in-out group-hover:visible group-hover:opacity-100">
         <div className="py-1">
           {items.map((item, index) => (
             <a key={index} className="block px-4 py-2 text-sm font-bold text-primary hover:text-foreground/80" href="#">
