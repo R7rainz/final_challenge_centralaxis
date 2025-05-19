@@ -1,12 +1,73 @@
-# React + Vite
+# CentralAxis Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="https://www.centralaxis.com/_next/image?url=%2Flogo_white_icon_only.png&w=96&q=75" alt="CentralAxis Logo" width="100" />
+  <h1>Data Center Management Software</h1>
+  <p>A modern, high-performance clone of the CentralAxis website</p>
+</div>
 
-Currently, two official plugins are available:
+## 📋 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a high-performance clone of the CentralAxis website, focusing on optimized loading strategies, smooth animations, and responsive design. It's built with React and features advanced video loading techniques for optimal performance.
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<table>
+  <tr>
+    <td width="50%">
+      <h3>🚀 Performance Optimized</h3>
+      <ul>
+        <li>Advanced video lazy loading</li>
+        <li>Intelligent preloading strategy</li>
+        <li>Network-aware content delivery</li>
+        <li>Optimized asset loading</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <h3>🎨 Modern UI</h3>
+      <ul>
+        <li>Frosted glass header with blur effect</li>
+        <li>Responsive design for all devices</li>
+        <li>Smooth transitions and animations</li>
+        <li>Optimized for accessibility</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>📱 Mobile First</h3>
+      <ul>
+        <li>Fully responsive layouts</li>
+        <li>Touch-friendly navigation</li>
+        <li>Optimized for various screen sizes</li>
+        <li>Performance-focused mobile experience</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <h3>🧩 Component-Based</h3>
+      <ul>
+        <li>Modular component architecture</li>
+        <li>Reusable UI components</li>
+        <li>Clean separation of concerns</li>
+        <li>Easy to maintain and extend</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## 🛠️ Installation
+
+1. Clone the repository:
+```bash
+   git clone https://github.com/yourusername/centralaxis-clone.git
+   cd centralaxis-clone
+```
+2. Install the dependencies:
+```bash
+  pnpm install
+```
+
+3. Run on localhost:
+```bash
+  pnpm run dev
+```
