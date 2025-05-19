@@ -7,7 +7,6 @@ const features = [
   {
     poster_url: "https://www.centralaxis.com/posters/monitoring.png",
     video_url: "https://www.centralaxis.com/hb-monitoring.mp4",
-    webm_url: "https://www.centralaxis.com/hb-monitoring.webm", // Optional WebM version if available
     title: "Advanced Monitoring",
     description:
       "CentralAxis provides cutting-edge monitoring solutions for your data center, offering real-time insights and comprehensive analytics to optimize performance, reduce costs, and enhance reliability.",
@@ -20,7 +19,6 @@ const features = [
   {
     poster_url: "https://www.centralaxis.com/posters/networking.png",
     video_url: "https://www.centralaxis.com/landing/networking-b.mp4",
-    webm_url: "https://www.centralaxis.com/landing/networking-b.webm", // Optional WebM version if available
     title: "Network Management and Monitoring",
     description:
       "Comprehensive network monitoring and management that ensures optimal performance, security, and reliability across your entire data center infrastructure.",
