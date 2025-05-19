@@ -1,3 +1,6 @@
+"use client"
+import { useEffect, useRef, useState } from "react"
+
 // Feature data
 const features = [
   {
@@ -26,6 +29,7 @@ const features = [
   },
   {
     video_url: "https://www.centralaxis.com/landing/asset-management-b.mp4",
+    poster_url: "https://www.centralaxis.com/posters/asset-management.png", // Added missing poster
     title: "Asset Management",
     description:
       "Streamline your data center operations with our comprehensive asset management system. Track, maintain, and optimize your infrastructure with precision and ease.",
@@ -37,6 +41,7 @@ const features = [
   },
   {
     video_url: "https://www.centralaxis.com/landing/SinglePane-b.mp4",
+    poster_url: "https://www.centralaxis.com/posters/singlepane.png", // Added missing poster
     title: "A Single Pane of Glass",
     description: "A unified view across all of your BMS and EPMS systems, tailored to your needs.",
     features: [
@@ -47,6 +52,7 @@ const features = [
   },
   {
     video_url: "https://www.centralaxis.com/landing/__compliance.mp4",
+    poster_url: "https://www.centralaxis.com/posters/compliance.png", // Added missing poster
     title: "Built-In Compliance",
     description: "CentralAxis provides compliance as a service for data centers.",
     features: [
@@ -56,6 +62,7 @@ const features = [
   },
   {
     video_url: "https://www.centralaxis.com/landing/dc-planning.mp4",
+    poster_url: "https://www.centralaxis.com/posters/dc-planning.png", // Added missing poster
     title: "Data Center Planning",
     description:
       "Want to support the latest and greatest architectures on the market? Modern GPUs and even CPUs are more water and energy intensive than ever.",
@@ -66,6 +73,108 @@ const features = [
     ],
   },
 ]
+
+// Video component with lazy loading and optimization
+function LazyVideo({ video_url, poster_url, index }) {
+  const videoRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const observerRef = useRef(null)
+
+  useEffect(() => {
+    // Only load first two videos immediately, lazy load the rest
+    if (index < 2) {
+      setIsVisible(true)
+      return
+    }
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true)
+          observerRef.current.disconnect()
+        }
+      },
+      { rootMargin: "200px" }, // Start loading when 200px away from viewport
+    )
+
+    if (videoRef.current) {
+      observerRef.current.observe(videoRef.current)
+    }
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+    }
+  }, [index])
+
+  const handleLoadedData = () => {
+    setIsLoaded(true)
+  }
+
+  return (
+    <div
+      ref={videoRef}
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        borderRadius: "var(--radius, 0.5rem)",
+        display: "block",
+        height: "100%",
+        width: "100%",
+        aspectRatio: "16 / 9",
+        inset: "0px",
+        backgroundColor: "#0f0f0f", // Dark background while loading
+      }}
+    >
+      {/* Always show poster image */}
+      {poster_url && !isLoaded && (
+        <img
+          src={poster_url || "/placeholder.svg"}
+          alt=""
+          style={{
+            aspectRatio: "16 / 9",
+            height: "100%",
+            width: "100%",
+            position: "absolute",
+            objectFit: "contain",
+            borderRadius: "var(--radius, 0.5rem)",
+          }}
+          loading={index > 0 ? "lazy" : "eager"}
+          fetchpriority={index === 0 ? "high" : "low"}
+        />
+      )}
+
+      {/* Only load video when near viewport */}
+      {isVisible && (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={poster_url || ""}
+          onLoadedData={handleLoadedData}
+          style={{
+            aspectRatio: "16 / 9",
+            height: "100%",
+            width: "100%",
+            position: "absolute",
+            border: "none",
+            objectFit: "contain",
+            borderRadius: "var(--radius, 0.5rem)",
+            opacity: isLoaded ? 1 : 0, // Only show when loaded
+            transition: "opacity 0.3s ease",
+          }}
+          preload={index < 2 ? "auto" : "metadata"}
+        >
+          <source src={video_url} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
+    </div>
+  )
+}
 
 function FeaturesSection() {
   return (
@@ -95,38 +204,7 @@ function FeaturesSection() {
             >
               {/* Video Section */}
               <figure className="p-2 md:h-auto md:w-[360px] lg:w-[480px] xl:w-[560px]">
-                <div
-                  style={{
-                    position: "relative",
-                    overflow: "hidden",
-                    borderRadius: "var(--radius, 0.5rem)",
-                    display: "block",
-                    height: "100%",
-                    width: "100%",
-                    aspectRatio: "16 / 9",
-                    inset: "0px",
-                  }}
-                >
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    poster={item.poster_url || ""}
-                    style={{
-                      aspectRatio: "16 / 9",
-                      height: "100%",
-                      width: "100%",
-                      position: "absolute",
-                      border: "none",
-                      objectFit: "contain",
-                      borderRadius: "var(--radius, 0.5rem)",
-                    }}
-                  >
-                    <source src={item.video_url} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                <LazyVideo video_url={item.video_url} poster_url={item.poster_url || ""} index={index} />
               </figure>
 
               {/* Content Section */}
