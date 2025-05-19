@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef, useState } from "react"
 
 // Feature data
@@ -124,10 +126,9 @@ function LazyVideo({ video_url, poster_url, index }) {
         width: "100%",
         aspectRatio: "16 / 9",
         inset: "0px",
-        backgroundColor: "#0f0f0f", // Dark background while loading
       }}
     >
-      {/* Always show poster image */}
+      {/* Only show poster image when video is not loaded */}
       {poster_url && !isLoaded && (
         <img
           src={poster_url || "/placeholder.svg"}
