@@ -59,8 +59,8 @@ This project is a high-performance clone of the CentralAxis website, focusing on
 
 1. Clone the repository:
 ```bash
-   git clone https://github.com/yourusername/centralaxis-clone.git
-   cd centralaxis-clone
+   git clone https://github.com/R7rainz/final_challenge_centralaxis.git
+   cd final_challenge_centralaxis
 ```
 2. Install the dependencies:
 ```bash
